@@ -1,0 +1,51 @@
+div.container {
+	border: 1px solid gray;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+body {
+	font-family: arial, sans-serif;	
+	font-size: 10pt;
+}
+
+div.header {
+    padding: 1em;
+    color: gray;
+    background-color: lightblue;
+    clear: left;
+    text-align: center;
+    font-size: 28pt;
+}
+
+div.footer {
+    padding: 1em;
+    color: gray;
+    background-color: lightblue;
+    clear: left;
+    text-align: center;
+}
+
+form {
+	margin-left: 170px;
+	border-left: 1px solid gray;
+		padding: 1em;
+}
+
+p.formheader {
+	font-size: 15pt;
+}
+
+span.errorFeedback {
+	color: red;
+	display: block;
+}
+
+input.inputTextBox {
+	display: block;
+	width: 500px;
+}
+
+input.error {
+	border: 1px solid red;
+}
