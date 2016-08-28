@@ -1,4 +1,3 @@
-
 Fsjs = this['form-validator'].Fsjs || {};
 
 var ClientEmailBlacklistChecker = function(){
@@ -43,7 +42,7 @@ var validateForm = function(){
     // Email Address cannot be blank and must be the correct format.
     var emailAddressValidity = Fsjs.FormValidation.validateEmailAddress($('#emailAddressField').val(), new ClientEmailBlacklistChecker());
     if (!emailAddressValidity.isValid) {
-        showError('#emailAddressFieldFeedback', nameValidity.errorMessage);
+        showError('#emailAddressFieldFeedback', emailAddressValidity.errorMessage);
         valid = false;
     } else {
         hideError('#emailAddressFieldFeedback');
@@ -52,7 +51,7 @@ var validateForm = function(){
     // Age must be a number between 13 and 150.
     var ageValidity = Fsjs.FormValidation.validateAge($('#ageField').val());
     if (!ageValidity.isValid) {
-        showError('#ageFieldFeedback', nameValidity.errorMessage);
+        showError('#ageFieldFeedback', ageValidity.errorMessage);
         valid = false;
     } else {
         hideError('#ageFieldFeedback');
