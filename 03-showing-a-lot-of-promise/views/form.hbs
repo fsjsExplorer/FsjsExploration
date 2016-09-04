@@ -1,0 +1,40 @@
+<form action="/form" method="post" id="form">
+    <p>Please enter your details:</p>
+    <p>
+        <label>Name (required):</label>
+        <input name="nameField" type="text" id="nameField" class="inputTextBox" value="{{name}}">
+        <span id="nameFieldFeedback" class="errorFeedback" style="{{nameFieldFeedbackVisibility}}">{{nameFieldFeedbackText}}</span>
+    </p>
+    <p>
+        <label>Email Address (required, correct format and not on server-held blacklist [test with 'root@localhost.org']):</label>
+        <input name="emailAddressField" type="text" id="emailAddressField" class="inputTextBox" value="{{emailAddress}}">
+        <span id="emailAddressFieldFeedback" class="errorFeedback" style="{{emailAddressFieldFeedbackVisibility}}">{{emailAddressFieldFeedbackText}}</span>
+    </p>
+    <p>
+        <label>Age (a number between 13 and 150):</label>
+        <input name="ageField" type="text" id="ageField" class="inputTextBox" value="{{age}}">
+        <span id="ageFieldFeedback" class="errorFeedback" style="{{ageFieldFeedbackVisibility}}">{{ageFieldFeedbackText}}</span>
+    </p>
+    <p class="submit">
+        <input id="formSubmitButton" type="submit" value="Submit" />
+    </p>
+</form>
+
+<script type="text/javascript" src="/public/scripts/es6-promise.min.js"></script>
+<script type="text/javascript" src="/public/common/form-validator.js"></script>
+<script type="text/javascript" src="/public/common/form.js"></script>
+
+<script>
+    $(function(){
+        $('#formSubmitButton').click(function(event){
+            $('#formSubmitButton').attr('disabled','disabled');
+            event.preventDefault();
+            validateForm().then(function(valid) {
+                $('#formSubmitButton').removeAttr('disabled');
+                if (valid) {
+                    $('#form').submit();
+                }
+            });
+        });
+    });
+</script>

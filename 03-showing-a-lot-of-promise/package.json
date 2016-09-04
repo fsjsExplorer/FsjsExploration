@@ -1,0 +1,25 @@
+{
+  "name": "common-code",
+  "version": "1.0.0",
+  "description": "Project to explore common code between browser and server",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "es6-promise": "^3.2.1",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.5",
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "chai-as-promised": "^5.3.0",
+    "mocha": "*"
+  }
+}
