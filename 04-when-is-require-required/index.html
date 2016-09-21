@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Complex using scheme on browser</title>
+  <script src="namespaces.js"></script>
+  <script src="interfaces/repository-interface.js"></script>
+  <script src="repositories/a-repository.js"></script>
+  <script src="repositories/a-n-other-repository.js"></script>
+  <script src="repositories/yet-a-n-other-repository.js"></script>
+  <script src="repositories/and-yet-a-n-other-repository.js"></script>
+  <script src="services/a-service.js"></script>
+  <script src="services/a-n-other-service.js"></script>
+  <script src="factories/class-factory.js"></script>
+  <script>
+    function useObjects() {
+      var aService = Fsjs.factories.getAService();
+      var aNOtherService = Fsjs.factories.getANOtherService();
+
+      document.getElementById("stringDump").innerHTML =
+        aService.who() +
+         '<br/>=====================================<br/>' +
+         aNOtherService.who();
+    }
+</script>
+</head>
+<body onload='useObjects()'>
+  <div id="stringDump"></div>
+</body>
+</html>
